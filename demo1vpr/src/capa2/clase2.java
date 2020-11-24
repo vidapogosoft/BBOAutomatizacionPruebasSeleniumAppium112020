@@ -27,7 +27,10 @@ public class clase2 {
             Thread.sleep(5000);
 
             driver.findElement(By.id("LoginUser_LoginButton")).click();
+            System.out.println(driver.getCurrentUrl());
             System.out.println(driver.getTitle());
+
+            Thread.sleep(3000);
 
             //http://18.218.178.167/OpenFact/FastFactEmisor/DocumentosEmitidos.aspx
 
