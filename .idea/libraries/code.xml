@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="code">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/chromedriver_win32.zip!/" />
+      <root url="jar://$PROJECT_DIR$/testng730.zip!/" />
+      <root url="jar://$PROJECT_DIR$/selenium-java-3.141.59.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
