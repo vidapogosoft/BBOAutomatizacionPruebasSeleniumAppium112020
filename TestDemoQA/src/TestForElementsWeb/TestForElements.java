@@ -43,7 +43,7 @@ public class TestForElements {
     public void NavegarWeb()
     {
 
-        //  driver.navigate().forward();
+        // driver.navigate().forward();
         // driver.navigate().back();
         //driver.navigate().refresh();
 
@@ -109,9 +109,15 @@ public class TestForElements {
             driver.navigate().to("https://demoqa.com/checkbox");
 
             //utilizamos xpath para obtner le valor del elemento web
+
+            //*[@id="tree-node"]/ol/li/span/button/svg
+            //*[@id="tree-node"]/ol/li/span/button
+
             WebElement btnExpand = driver.findElement(By.xpath("//*[@id=\"tree-node\"]/ol/li/span/button"));
             btnExpand.click();
 
+
+            //#tree-node > ol > li > ol > li:nth-child(1) > span > label > span.rct-checkbox > svg
             WebElement Check = driver.findElement(By.cssSelector("#tree-node > ol > li > ol > li:nth-child(1) > span > label > span.rct-checkbox > svg"));
             Check.click();
 
