@@ -1,19 +1,15 @@
-package TestForFormWeb;
+package ReportSimple;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
-import java.time.Duration;
-import java.util.NoSuchElementException;
+public class TestReport {
 
-public class TestForm {
 
     private static WebDriver driver = null;
 
@@ -42,29 +38,29 @@ public class TestForm {
             driver.findElement(By.id(("userNumber"))).sendKeys("0960574445");
             driver.findElement(By.id(("subjectsInput"))).sendKeys("Curso de Automatizacion con Selenium");
 
-        WebElement radioBtnMale = driver.findElement(By.id("gender-radio-1"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].checked = true;", radioBtnMale);
+            WebElement radioBtnMale = driver.findElement(By.id("gender-radio-1"));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].checked = true;", radioBtnMale);
 
 
-        WebElement ChekHobbie1 = driver.findElement(By.id("hobbies-checkbox-1"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].checked = true;", ChekHobbie1);
+            WebElement ChekHobbie1 = driver.findElement(By.id("hobbies-checkbox-1"));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].checked = true;", ChekHobbie1);
 
 
-        WebElement ChekHobbie2 = driver.findElement(By.id("hobbies-checkbox-3"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].checked = true;", ChekHobbie2);
+            WebElement ChekHobbie2 = driver.findElement(By.id("hobbies-checkbox-3"));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].checked = true;", ChekHobbie2);
 
-        Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(By.xpath("//*[@id='dateOfBirthInput']")));
-        actions.click();
-        actions.sendKeys(Keys.BACK_SPACE).sendKeys(Keys.BACK_SPACE)
-                .sendKeys(Keys.BACK_SPACE).sendKeys(Keys.BACK_SPACE)
-                .sendKeys(Keys.BACK_SPACE).sendKeys(Keys.BACK_SPACE)
-                .sendKeys(Keys.BACK_SPACE).sendKeys(Keys.BACK_SPACE)
-                .sendKeys(Keys.BACK_SPACE).sendKeys(Keys.BACK_SPACE);
-        Thread.sleep(3000);
-        actions.sendKeys("12-10-1980");
-        actions.sendKeys(Keys.ESCAPE);
-        actions.build().perform();
+            Actions actions = new Actions(driver);
+            actions.moveToElement(driver.findElement(By.xpath("//*[@id='dateOfBirthInput']")));
+            actions.click();
+            actions.sendKeys(Keys.BACK_SPACE).sendKeys(Keys.BACK_SPACE)
+                    .sendKeys(Keys.BACK_SPACE).sendKeys(Keys.BACK_SPACE)
+                    .sendKeys(Keys.BACK_SPACE).sendKeys(Keys.BACK_SPACE)
+                    .sendKeys(Keys.BACK_SPACE).sendKeys(Keys.BACK_SPACE)
+                    .sendKeys(Keys.BACK_SPACE).sendKeys(Keys.BACK_SPACE);
+            Thread.sleep(3000);
+            actions.sendKeys("12-10-1980");
+            actions.sendKeys(Keys.ESCAPE);
+            actions.build().perform();
 
             driver.findElement(By.id(("currentAddress"))).click();
             driver.findElement(By.id(("currentAddress"))).sendKeys("Miraflores");
@@ -85,6 +81,7 @@ public class TestForm {
 
             driver.findElement(By.id(("submit"))).click();
 
+            Assert.assertTrue(true);
 
         } catch (InterruptedException e) {
             e.printStackTrace();
