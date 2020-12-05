@@ -26,5 +26,5 @@ insert into SetDatos1 (DatoTest1, ResultadoDatoTest1, DatoTest2, ResultadoDatoTe
 values('short',null,null,null)
 
 
+select * from DataPoolTest1..SetDatos1
 
-select * from SetDatos1..SetDatos1
