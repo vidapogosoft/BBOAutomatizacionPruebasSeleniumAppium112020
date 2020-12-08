@@ -48,6 +48,9 @@ public class DataDriveTest {
 
         String searchtext = readFile.getCellValue(filepath, "Hoja1",0,0);
 
+        String searchtext2 = readFile.getCellValue(filepath, "Hoja1",0,1);
+
+
         driver.findElement(searchBoxLocator).sendKeys(searchtext);
 
         driver .findElement(searchBtnLocator).click();
